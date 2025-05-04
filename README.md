@@ -1,1 +1,1 @@
-# game-score-calculator
+# Game Score Calculator
