@@ -1,0 +1,44 @@
+{
+  "name": "game-score-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "packageManager": "npm@10.9.2",
+  "main": "index.js",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev:web": "turbo run dev --filter=web...",
+    "dev:api": "turbo run dev --filter=api...",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evrwaqe/game-score-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evrwaqe/game-score-calculator/issues"
+  },
+  "homepage": "https://github.com/evrwaqe/game-score-calculator#readme",
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "turbo": "^2.5.3"
+  },
+  "lint-staged": {
+    "apps/web/src/**/*.{js,jsx,ts,tsx}": [
+      "npm --workspace apps/web run lint"
+    ],
+    "apps/api/**/*.{js,ts}": [
+      "npm --workspace apps/api run lint"
+    ]
+  }
+}
