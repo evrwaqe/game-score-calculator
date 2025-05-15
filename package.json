@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/evrwaqe/game-score-calculator#readme",
   "devDependencies": {
-    "turbo": "^2.5.3"
+    "turbo": "^2.5.3",
+    "typescript": "^5.8.3"
   }
 }
