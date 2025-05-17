@@ -4,6 +4,7 @@
   "description": "",
   "packageManager": "npm@10.9.2",
   "main": "index.js",
+  "type": "module",
   "workspaces": [
     "apps/web",
     "apps/api"
@@ -28,6 +29,8 @@
   },
   "homepage": "https://github.com/evrwaqe/game-score-calculator#readme",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@nestjs/cli": "^11.0.7",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
