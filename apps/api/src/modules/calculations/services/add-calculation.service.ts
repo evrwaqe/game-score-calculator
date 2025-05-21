@@ -9,10 +9,7 @@ export class AddCalculationService {
 
   async add(dto: AddCalculationRequestDTO): Promise<AddCalculationResponseDTO> {
     const response = await this.prisma.calculation.create({
-      data: {
-        gameName: dto.gameName,
-        score: dto.score,
-      },
+      data: dto,
     })
     return {
       id: response.id,
