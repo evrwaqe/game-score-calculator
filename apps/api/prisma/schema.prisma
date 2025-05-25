@@ -12,15 +12,23 @@ model User {
   email        String        @unique
   name         String?
   avatar       String?
+  isSupporter  Boolean       @default(false)
   calculations Calculation[]
   createdAt    DateTime      @default(now())
 }
 
 model Calculation {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  gameName  String
-  score     Int
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
+  id                  String   @id @default(uuid())
+  createdAt           DateTime @default(now())
+  finalScore          Int
+  bsoluteCinemaMoment Boolean  @default(false)
+  artDirection        Int      @default(0)
+  gameplay            Int      @default(0)
+  audio               Int      @default(0)
+  soundtrack          Int      @default(0)
+  accessibility       Int      @default(0)
+  performance         Int      @default(0)
+  polish              Int      @default(0)
+  user                User     @relation(fields: [userId], references: [id])
+  userId              String
 }
