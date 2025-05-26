@@ -1,9 +1,9 @@
 import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
 import { User } from '@prisma/client'
 import { AddCalculationService } from '../services'
 import { AddCalculationRequestDTO } from '../dtos/request'
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
 
 @ApiTags('Calculations')
 @ApiBearerAuth('access-token')
