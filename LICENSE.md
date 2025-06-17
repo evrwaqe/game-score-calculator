@@ -44,4 +44,4 @@ All rights reserved.
 10. GENERAL PROVISIONS  
     10.1 This License constitutes the entire agreement between the Parties with respect to the Software and supersedes all prior or contemporaneous agreements, oral or written.  
     10.2 If any provision of this License is held invalid or unenforceable, the remaining provisions shall remain in full force and effect.  
-    10.3 This License shall be governed by and construed in accordance with the laws of [State/Country], and any disputes shall be resolved in the courts of [City, State].
+    10.3 This License shall be governed by and construed in accordance with the laws of São Paulo, Brasil, and any disputes shall be resolved in the courts of São Paulo, Brasil.

@@ -45,4 +45,4 @@ Todos os direitos reservados.
 10. DISPOSIÇÕES GERAIS
     10.1 Esta licença constitui o entendimento integral entre as Partes com relação ao objeto aqui licenciado, prevalecendo sobre quaisquer acordos anteriores, verbais ou escritos.
     10.2 Se qualquer disposição desta licença for considerada inválida ou inaplicável, as demais continuarão em pleno vigor.
-    10.3 Esta licença será regida e interpretada de acordo com as leis do [Estado/País], e as Partes elegem o foro da comarca de [Cidade, Estado] para dirimir quaisquer controvérsias dele decorrentes.
+    10.3 Esta licença será regida e interpretada de acordo com as leis do São Paulo, Brasil, e as Partes elegem o foro da comarca de São Paulo, Brasil para dirimir quaisquer controvérsias dele decorrentes.
