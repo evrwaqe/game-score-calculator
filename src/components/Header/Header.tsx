@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUser } from 'react-icons/fa'
 
-function Header() {
+export function Header() {
   return (
     <div className="flex justify-between items-center">
       <div className="w-5"></div>
@@ -12,5 +12,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header
