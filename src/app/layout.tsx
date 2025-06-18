@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Header } from '@/components/Header'
 
 const industry = localFont({
   variable: '--font-default',
@@ -60,7 +61,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${industry.variable} antialiased`}>{children}</body>
+      <body className={`${industry.variable} antialiased`}>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
