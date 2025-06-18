@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${industry.variable}  antialiased`}>{children}</body>
+      <body className={`${industry.variable} antialiased`}>{children}</body>
     </html>
   )
 }
