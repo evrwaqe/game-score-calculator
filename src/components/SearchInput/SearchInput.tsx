@@ -3,8 +3,8 @@ import { IoSearch } from 'react-icons/io5'
 
 export function SearchInput() {
   return (
-    <div className="flex justify-center items-center">
-      <label htmlFor="search-game" className="w-full flex">
+    <div className="w-full">
+      <label htmlFor="search-game" className="relative">
         <input
           type="text"
           name="search-game"
@@ -14,7 +14,7 @@ export function SearchInput() {
         />
         <IoSearch
           size={20}
-          className="pointer-events-none relative right-6 top-4"
+          className="pointer-events-none absolute top-0 right-3"
         />
       </label>
     </div>
