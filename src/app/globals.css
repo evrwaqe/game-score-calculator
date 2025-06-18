@@ -9,6 +9,7 @@
 @theme {
   --color-main-color: #f4f600;
   --color-secondary-color: #facc15;
+  --color-gray: #9198a1;
 }
 
 body {
