@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${industry.variable} antialiased`}>
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-col items-center">{children}</main>
       </body>
     </html>
   )
