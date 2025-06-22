@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/Header'
+import { AuthProvider } from '@/contexts/AuthContext'
 
 const industry = localFont({
   variable: '--font-default',
@@ -62,8 +63,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${industry.variable} antialiased`}>
-        <Header />
-        <main className="flex flex-col items-center">{children}</main>
+        <AuthProvider>
+          <Header />
+          <main className="flex flex-col items-center">{children}</main>
+        </AuthProvider>
       </body>
     </html>
   )
