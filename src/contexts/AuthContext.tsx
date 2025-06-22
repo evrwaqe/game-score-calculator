@@ -13,7 +13,9 @@ import { AuthContextType } from './types'
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
-  signInWithGoogle: () => {},
+  signInWithGoogle: async () => {
+    throw new Error('AuthContext not initialized')
+  },
 })
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {

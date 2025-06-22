@@ -2,7 +2,7 @@ import { User } from 'firebase/auth'
 
 interface AuthContextType {
   user: User | null
-  signInWithGoogle: () => void
+  signInWithGoogle: () => Promise<User>
 }
 
 export type { AuthContextType }
