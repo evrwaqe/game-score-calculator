@@ -8,7 +8,7 @@ import {
   ReactNode,
 } from 'react'
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
-import { signInWithGoogle } from '@/api/infra/firebase/auth'
+import { signInWithGoogle } from '@/api/firebase'
 import { AuthContextType } from './types'
 
 const AuthContext = createContext<AuthContextType>({

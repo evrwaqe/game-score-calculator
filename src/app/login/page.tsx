@@ -4,7 +4,7 @@ import React from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import { useRouter } from 'next/navigation'
-import { signInWithGoogle } from '@/api/infra'
+import { signInWithGoogle } from '@/api/firebase'
 
 function Login() {
   const router = useRouter()
