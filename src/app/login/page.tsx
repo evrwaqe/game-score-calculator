@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import { FaUserCircle } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
 import { useRouter } from 'next/navigation'
 import { signInWithGoogle } from '@/api/infra'
 
@@ -15,10 +17,15 @@ function Login() {
   }
 
   return (
-    <div className="flex flex-col border border-main-color rounded-[0.25rem] mt-20 p-3 gap-8 w-full max-w-[30rem] items-center">
-      <div>Profile image</div>
-      <div>Login with your Google account</div>
-      <button onClick={handleLogin}>Login wiwth Google Button</button>
+    <div className="flex flex-col items-center rounded-[0.25rem] mt-20 gap-8">
+      <FaUserCircle size={64} />
+      <button
+        onClick={handleLogin}
+        className="flex items-center gap-3 p-3 cursor-pointer rounded-xs border border-main-color"
+      >
+        <FcGoogle size={32} />
+        Login with Google
+      </button>
     </div>
   )
 }
