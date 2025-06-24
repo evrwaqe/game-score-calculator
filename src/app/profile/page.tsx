@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
 import { signOutGoogle } from '@/api/firebase'
 import { LuBadge } from 'react-icons/lu'
+import { SearchInput } from '@/components/SearchInput'
+import { FaFilter } from 'react-icons/fa'
 
 function Profile() {
   const { user, loading } = useAuth()
@@ -44,9 +46,9 @@ function Profile() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex border border-amber-300">
-          <div>search game</div>
-          <div>filter game</div>
+        <div className="flex gap-4 items-center">
+          <SearchInput />
+          <FaFilter size={32} className="cursor-pointer" />
         </div>
         <div className="border border-fuchsia-800">games list</div>
       </div>
