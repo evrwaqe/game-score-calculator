@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
 import { signOutGoogle } from '@/api/firebase'
+import { LuBadge } from 'react-icons/lu'
 
 function Profile() {
   const { user, loading } = useAuth()
@@ -21,7 +22,7 @@ function Profile() {
   return (
     <div className="flex flex-col border border-main-color rounded-[0.25rem] mt-20 p-3 gap-8 w-full max-w-4xl">
       <div className="flex justify-between">
-        <div className="flex gap-2">
+        <div className="flex gap-4">
           <Image
             src={user.photoURL ?? '/default-user.svg'}
             width={96}
@@ -29,15 +30,17 @@ function Profile() {
             alt="Profile Picture"
             className="rounded-[0.5rem]"
           />
-          <div className="border border-amber-900">{user.displayName}</div>
+          <h1 className="text-lg">{user.displayName}</h1>
+        </div>
+        <div className="flex flex-col justify-between  items-end">
+          <LuBadge size={32} className="text-gray" />
           <button
             onClick={signOutGoogle}
-            className="border border-main-color cursor-pointer"
+            className="text-red-500 cursor-pointer"
           >
             Sign Out
           </button>
         </div>
-        <div className="border border-zinc-300">Badge</div>
       </div>
 
       <div className="flex flex-col gap-4">
