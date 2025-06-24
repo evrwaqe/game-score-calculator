@@ -79,11 +79,11 @@ function Profile() {
                     key={option.value}
                     onClick={() => handleSelect(option.value)}
                     className={`
-                      w-full text-left px-2 py-1 rounded cursor-pointer
+                      w-full text-left px-2 py-1 rounded cursor-pointer border-b-4 border-transparent
                       ${
                         sortOption === option.value
-                          ? 'border-b-4 border-b-main-color font-medium'
-                          : 'hover:border-b-4 hover:border-b-secondary-color'
+                          ? 'border-b-main-color font-medium'
+                          : 'hover:border-b-secondary-color'
                       }
                     `}
                   >
