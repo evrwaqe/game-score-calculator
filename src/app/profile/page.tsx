@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { LuBadge } from 'react-icons/lu'
 import { FaFilter } from 'react-icons/fa'
 import Image from 'next/image'
@@ -15,6 +15,7 @@ function Profile() {
 
   const [filterOpen, setFilterOpen] = useState(false)
   const [sortOption, setSortOption] = useState<string>('alphabetical')
+  const popoverRef = useRef<HTMLDivElement>(null)
 
   const options = [
     { value: 'alphabetical', label: 'Alphabetical (A → Z)' },
@@ -28,6 +29,24 @@ function Profile() {
       router.push('/login')
     }
   }, [loading, router, user])
+
+  useEffect(() => {
+    if (!filterOpen) return
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target as Node)
+      ) {
+        setFilterOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [filterOpen])
 
   if (!user) return null
 
@@ -63,7 +82,7 @@ function Profile() {
       <div className="flex items-center gap-4">
         <SearchInput />
 
-        <div className="relative">
+        <div className="relative" ref={popoverRef}>
           <FaFilter
             size={24}
             className="cursor-pointer"
