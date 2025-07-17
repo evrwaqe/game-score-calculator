@@ -15,7 +15,6 @@ export function SearchInput() {
       return
     }
     try {
-      console.log('try block')
       const data = await fetchGames(query)
       setGames(data)
     } catch (error) {
