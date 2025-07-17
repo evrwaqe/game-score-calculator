@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { Game, useGameContext } from '@/contexts/GameContext'
+import { useGameContext, Game } from '@/contexts/GameContext'
 
 function GamesList() {
   const { games } = useGameContext()
@@ -26,7 +26,7 @@ function GamesList() {
               height={128}
               width={128}
               className="object-cover rounded-xs"
-              alt="Game image"
+              alt="Game cover image"
             />
           )}
           <div>

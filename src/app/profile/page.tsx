@@ -6,7 +6,7 @@ import { FaFilter } from 'react-icons/fa'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { SearchInput } from '@/components/SearchInput'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/contexts/AuthContext/AuthContext'
 import { signOutGoogle } from '@/api/firebase'
 
 function Profile() {

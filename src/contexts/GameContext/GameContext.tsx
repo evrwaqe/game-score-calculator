@@ -1,13 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, ReactNode } from 'react'
-
-export interface Game {
-  id: number
-  title: string
-  platforms: string
-  image: string | null
-}
+import { Game } from './types'
 
 interface GameContextType {
   games: Game[] | null

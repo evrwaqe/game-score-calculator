@@ -1,4 +1,4 @@
-import { GamesList } from '@/components/GamesList/GamesList'
+import { GamesList } from '@/components/GamesList'
 import { SearchInput } from '@/components/SearchInput'
 
 export default function Home() {
