@@ -1,32 +1,28 @@
 'use client'
 
-import { fetchGames } from '@/api/rawg/api'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
+import { fetchGames } from '@/api/rawg/api'
+import { useGameContext } from '@/contexts/GameContext'
 
 export function SearchInput() {
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState([])
+  const { setGames } = useGameContext()
 
-  useEffect(() => {
-    if (query.length < 3) {
-      setResults([])
+  const handleSearch = async () => {
+    if (query.trim().length < 3) {
+      setGames([])
       return
     }
-
-    const handle = setTimeout(() => {
-      fetchGames(query)
-        .then((data) => {
-          console.log(data)
-          setResults(data)
-        })
-        .catch((error) => {
-          console.error(error)
-          setResults([])
-        })
-    }, 300)
-    return () => clearTimeout(handle)
-  }, [query])
+    try {
+      console.log('try block')
+      const data = await fetchGames(query)
+      setGames(data)
+    } catch (error) {
+      console.error(error)
+      setGames([])
+    }
+  }
 
   return (
     <div className="w-full">
@@ -39,10 +35,13 @@ export function SearchInput() {
           className="w-full p-3 text-inherit border border-gray rounded-[0.25rem] outline-main-color"
           onChange={(e) => setQuery(e.target.value)}
         />
-        <IoSearch
-          size={20}
-          className="pointer-events-none absolute top-0 right-3"
-        />
+        <button
+          onClick={handleSearch}
+          className="cursor-pointer disabled:cursor-not-allowed"
+          disabled={query.length < 3}
+        >
+          <IoSearch size={20} className="absolute top-0 right-3" />
+        </button>
       </label>
     </div>
   )

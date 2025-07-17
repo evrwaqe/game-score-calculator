@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { AuthProvider } from '@/contexts/AuthContext'
+import { GameProvider } from '@/contexts/GameContext'
 
 const industry = localFont({
   variable: '--font-default',
@@ -65,7 +66,9 @@ export default function RootLayout({
       <body className={`${industry.variable} antialiased`}>
         <AuthProvider>
           <Header />
-          <main className="flex flex-col items-center">{children}</main>
+          <GameProvider>
+            <main className="flex flex-col items-center">{children}</main>
+          </GameProvider>
         </AuthProvider>
       </body>
     </html>
