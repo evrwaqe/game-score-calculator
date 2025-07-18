@@ -3,14 +3,27 @@
 import React from 'react'
 import Image from 'next/image'
 import { useGameContext, Game } from '@/contexts/GameContext'
+import { useRouter } from 'next/navigation'
 
 function GamesList() {
   const { games } = useGameContext()
+  const router = useRouter()
 
   if (games === null) return null
 
   if (games.length === 0) {
     return <p className="mt-4 text-center text-gray">Nenhum jogo encontrado.</p>
+  }
+
+  const handleClick = (game: Game) => {
+    const params = new URLSearchParams({
+      id: game.id.toString(),
+      title: game.title,
+      image: game.image ?? '',
+      platforms: game.platforms,
+    }).toString()
+
+    router.push(`/score-calculator?${params}`)
   }
 
   return (
@@ -19,6 +32,7 @@ function GamesList() {
         <li
           key={game.id}
           className="flex gap-3 p-3 border rounded-sm border-main-color hover:bg-[rgb(244,246,0)]/[.15] cursor-pointer"
+          onClick={() => handleClick(game)}
         >
           {game.image && (
             <Image
