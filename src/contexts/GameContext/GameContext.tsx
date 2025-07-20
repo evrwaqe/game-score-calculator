@@ -6,15 +6,20 @@ import { Game } from './types'
 interface GameContextType {
   games: Game[] | null
   setGames: React.Dispatch<React.SetStateAction<Game[] | null>>
+  selectedGame: Game | null
+  setSelectedGame: (game: Game) => void
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined)
 
 export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [games, setGames] = useState<Game[] | null>(null)
+  const [selectedGame, setSelectedGame] = useState<Game | null>(null)
 
   return (
-    <GameContext.Provider value={{ games, setGames }}>
+    <GameContext.Provider
+      value={{ games, setGames, selectedGame, setSelectedGame }}
+    >
       {children}
     </GameContext.Provider>
   )

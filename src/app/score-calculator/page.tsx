@@ -1,21 +1,17 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
+import { useGameContext } from '@/contexts/GameContext'
 
 function ScoreCalculator() {
-  const params = useSearchParams()
-  const id = params.get('id')
-  const title = params.get('title')
-  const image = params.get('image')
-  const platforms = params.get('platforms')
+  const { selectedGame } = useGameContext()
 
   return (
     <div>
       <h1>Score Calculator</h1>
-      <p>{id}</p>
-      <p>{title}</p>
-      <p>{image}</p>
-      <p>{platforms}</p>
+      <p>{selectedGame?.id}</p>
+      <p>{selectedGame?.title}</p>
+      <p>{selectedGame?.image}</p>
+      <p>{selectedGame?.platforms}</p>
     </div>
   )
 }

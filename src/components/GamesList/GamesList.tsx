@@ -6,7 +6,7 @@ import { useGameContext, Game } from '@/contexts/GameContext'
 import { useRouter } from 'next/navigation'
 
 function GamesList() {
-  const { games } = useGameContext()
+  const { games, setSelectedGame } = useGameContext()
   const router = useRouter()
 
   if (games === null) return null
@@ -16,14 +16,8 @@ function GamesList() {
   }
 
   const handleClick = (game: Game) => {
-    const params = new URLSearchParams({
-      id: game.id.toString(),
-      title: game.title,
-      image: game.image ?? '',
-      platforms: game.platforms,
-    }).toString()
-
-    router.push(`/score-calculator?${params}`)
+    setSelectedGame(game)
+    router.push('/score-calculator')
   }
 
   return (
