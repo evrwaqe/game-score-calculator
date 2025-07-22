@@ -24,7 +24,13 @@ export function SearchInput() {
   }
 
   return (
-    <div className="w-full">
+    <form
+      className="w-full"
+      onSubmit={(e) => {
+        e.preventDefault()
+        handleSearch()
+      }}
+    >
       <label htmlFor="search-game" className="relative">
         <input
           type="text"
@@ -37,11 +43,11 @@ export function SearchInput() {
         <button
           onClick={handleSearch}
           className="cursor-pointer disabled:cursor-not-allowed"
-          disabled={query.length < 3}
+          disabled={query.trim().length < 3}
         >
           <IoSearch size={20} className="absolute top-0 right-3" />
         </button>
       </label>
-    </div>
+    </form>
   )
 }
